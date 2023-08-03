@@ -7,3 +7,21 @@ It is a simple CRUD API over one entity.
 This repo is part of a larger project. Of course, I will not share the requirements for the front-end evaluation itself. 😉
 
 NB: this is a work in progress.
+
+
+## Usage
+
+Install the packages:
+```bash
+npm run i
+```
+
+Development:
+```bash
+npm run dev
+```
+
+Run on host:
+```bash
+npm run start
+```
