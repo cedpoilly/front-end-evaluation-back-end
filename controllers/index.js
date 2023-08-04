@@ -1,3 +1,5 @@
+import dotenv from "dotenv"
+
 import {
   getAllPeople,
   getOnePersonById,
@@ -7,10 +9,13 @@ import {
   deleteOnePerson,
 } from "../services/index.js"
 
+dotenv.config()
+
 export async function getAllTheItems(_, res) {
   const list = await getAllPeople()
   console.log("list", list)
-  res.status(200).json(list)
+  const delay = process.env.DELAY_ON_FETCH_ALL ?? 0
+  setTimeout(() => res.status(200).json(list), delay)
 }
 
 export async function getItemsById(req, res) {
