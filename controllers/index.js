@@ -31,6 +31,7 @@ export async function getFilteredItems(req, res) {
 
 export async function createItem(req, res) {
   const item = req.body
+  console.log(`createItem: item:`, item)
   try {
     const createdItem = await createNewPerson(item)
     res.status(201).json(createdItem)
