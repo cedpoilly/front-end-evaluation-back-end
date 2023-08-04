@@ -7,7 +7,7 @@ const personSchema = new Schema({
 
   age: { type: Number, required: true, min: 0 },
 
-  job: { type: String, required: true, minLength: 5, maxLength: 10 },
+  job: { type: String, required: true, minLength: 5, maxLength: 15 },
 })
 
 export default model("Person", personSchema)
