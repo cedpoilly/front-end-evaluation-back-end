@@ -31,8 +31,13 @@ export async function getFilteredItems(req, res) {
 
 export async function createItem(req, res) {
   const item = req.body
-  const createdItem = await createNewPerson(item)
-  res.status(201).json(createdItem)
+  try {
+    const createdItem = await createNewPerson(item)
+    res.status(201).json(createdItem)
+  } catch (error) {
+    console.error(error)
+    res.status(400).json({ error: error.message })
+  }
 }
 
 export async function updateOneItem(req, res) {
