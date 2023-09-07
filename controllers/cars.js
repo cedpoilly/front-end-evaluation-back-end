@@ -14,10 +14,12 @@ import {
 dotenv.config()
 
 export async function getAllTheCars(_, res) {
-  const list = await getAllCars()
-  console.log("list", list)
-  const delay = Number(process.env.DELAY_ON_FETCH_ALL) ?? 0
-  setTimeout(() => res.status(200).json(list), delay)
+  try {
+    const list = await getAllCars()
+    res.status(200).json(list)
+  } catch (error) {
+    console.log("Failed to fetch list.")
+  }
 }
 
 export async function getCarsById(req, res) {

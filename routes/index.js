@@ -10,21 +10,6 @@ import {
   deleteOneItem,
 } from "../controllers/index.js"
 
-const router = Router()
-export default router
-
-router.get("/", getAllTheItems)
-
-router.get("/:id", getItemsById)
-
-router.get("/:job/:value", getFilteredItems)
-
-router.post("/", createItem)
-
-router.put("/:id", updateOneItem)
-
-router.delete("/:id", deleteOneItem)
-
 import {
   getAllTheCars,
   getCarsById,
@@ -33,6 +18,9 @@ import {
   updateOneCar,
   deleteOneCar,
 } from "../controllers/cars.js"
+
+const router = Router()
+export default router
 
 router.get("/cars/", getAllTheCars)
 
@@ -45,3 +33,15 @@ router.post("/cars/", createCar)
 router.put("/cars/:id", updateOneCar)
 
 router.delete("/cars/:id", deleteOneCar)
+
+router.get("/", getAllTheItems)
+
+router.get("/:id", getItemsById)
+
+router.get("/:job/:value", getFilteredItems)
+
+router.post("/", createItem)
+
+router.put("/:id", updateOneItem)
+
+router.delete("/:id", deleteOneItem)
