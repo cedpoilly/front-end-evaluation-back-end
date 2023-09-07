@@ -1,27 +1,28 @@
-// import CarModel from "../models/Person.js"
+// @ts-check
+
 import CarModel from "../models/Car.js"
 
-export async function createNewPerson(person) {
+export async function createNewCar(person) {
   const created = await CarModel.create(person)
   return created.toJSON()
 }
 
-export async function getAllPeople() {
+export async function getAllCars() {
   return await CarModel.find().lean()
 }
 
-export async function getOnePersonById(id) {
+export async function getOneCarById(id) {
   return await CarModel.findById(id).lean()
 }
 
-export async function getFilteredPersonList(property, value) {
+export async function getFilteredCarList(property, value) {
   return await CarModel.findOne({ [property]: value }).lean()
 }
 
-export async function updateOnePerson(id, updates) {
+export async function updateCar(id, updates) {
   return await CarModel.findByIdAndUpdate(id, updates, { new: true }).lean()
 }
 
-export async function deleteOnePerson(id) {
+export async function deleteCar(id) {
   return await CarModel.deleteOne({ _id: id }).lean()
 }

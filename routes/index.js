@@ -1,3 +1,4 @@
+// @ts-check
 import { Router } from "express"
 
 import {
@@ -16,10 +17,31 @@ router.get("/", getAllTheItems)
 
 router.get("/:id", getItemsById)
 
-router.get("/:property/:value", getFilteredItems)
+router.get("/:job/:value", getFilteredItems)
 
 router.post("/", createItem)
 
 router.put("/:id", updateOneItem)
 
 router.delete("/:id", deleteOneItem)
+
+import {
+  getAllTheCars,
+  getCarsById,
+  getFilteredCars,
+  createCar,
+  updateOneCar,
+  deleteOneCar,
+} from "../controllers/cars.js"
+
+router.get("/cars/", getAllTheCars)
+
+router.get("/cars/:id", getCarsById)
+
+router.get("/cars/:job/:value", getFilteredCars)
+
+router.post("/cars/", createCar)
+
+router.put("/cars/:id", updateOneCar)
+
+router.delete("/cars/:id", deleteOneCar)

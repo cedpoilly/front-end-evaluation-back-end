@@ -14,7 +14,8 @@ dotenv.config()
 export async function getAllTheItems(_, res) {
   const list = await getAllPeople()
   console.log("list", list)
-  const delay = process.env.DELAY_ON_FETCH_ALL ?? 0
+  // const delay = process.env.DELAY_ON_FETCH_ALL ?? 0
+  const delay = 0
   setTimeout(() => res.status(200).json(list), delay)
 }
 
